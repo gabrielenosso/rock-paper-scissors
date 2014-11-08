@@ -1,0 +1,263 @@
+/* Variables */
+@player1Color: #1FBED6;
+@player2Color: #CC0000;
+@mainColor: #32CD32;
+
+/* Mixins */
+.enable-gpu {
+  /* Enable GPU rendering */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Style */
+html, body, #rps-main-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Verdana', sans-serif;
+  color: @mainColor;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  font-size: 28px;
+  background-color: #000000;
+  background-image: url('../img/bg.png');
+}
+
+.rps-menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 150%;
+  color: #FFFFFF;
+  display: none;
+  text-align: center;
+  z-index: 3;
+}
+
+.rps-menu-button {
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.rps-menu-button:hover {
+  background: @mainColor;
+  color: #FFFFFF;
+  box-shadow: inset 0 0 15px #000000;
+  text-shadow: 0 0 10px #000000;
+}
+
+.player1-color {
+  color: @player1Color;
+}
+
+.player2-color {
+  color: @player2Color;
+}
+
+.player1-color-bg {
+  background-color: @player1Color;
+}
+
+.player2-color-bg {
+  background-color: @player2Color;
+}
+
+.rps-score {
+  position: absolute;
+  top: 0;
+  width: 44%;
+  height: 1em;
+  line-height: 100%;
+  color: #FFFFFF;
+  font-size: 2em;
+  padding: 0 3%;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+#rps-player1-score {
+  left: 0;
+  text-align: left;
+}
+
+#rps-player2-score {
+  right: 0;
+  text-align: right;
+}
+
+.rps-hand-container {
+  position: absolute;
+  top: 35%;
+  width: 48%;
+}
+
+#rps-player1-hand-container {
+  left: 0;
+}
+
+#rps-player2-hand-container {
+  right: 0;
+}
+
+.rps-hand {
+  width: 100%;
+  display: block;
+  height: auto;
+
+  .enable-gpu;
+}
+
+#rps-player2-hand {
+  /* flip */
+  filter: fliph; /* IE 8 */
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+#rps-result {
+  font-size: 3em;
+  line-height: 100%;
+  cursor: default;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+#rps-values-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  height: 30%;
+  display: none;
+}
+
+.rps-value-button {
+  cursor: pointer;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  border-radius: 100%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.rps-value-button:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* IE8 */
+}
+
+/* Animations */
+.count-animation {
+  animation: countAnimation ease-in 0.8s;
+  animation-iteration-count: 3;
+
+  -webkit-animation: countAnimation ease-in 0.8s;
+  -webkit-animation-iteration-count: 3;
+
+  -moz-animation: countAnimation ease-in 0.8s;
+  -moz-animation-iteration-count: 3;
+
+  -o-animation: countAnimation ease-in 0.8s;
+  -o-animation-iteration-count: 3;
+
+  -ms-animation: countAnimation ease-in 0.8s;
+  -ms-animation-iteration-count: 3;
+}
+
+@keyframes countAnimation {
+  0% {
+    transform: translate(0px, 0%);
+  }
+  85% {
+    transform: translate(0px, -60%);
+  }
+  100% {
+    transform: translate(0px, 0%);
+  }
+}
+
+@-moz-keyframes countAnimation {
+  0% {
+    -moz-transform: translate(0px, 0%);
+  }
+  85% {
+    -moz-transform: translate(0px, -60%);
+  }
+  100% {
+    -moz-transform: translate(0px, 0%);
+  }
+}
+
+@-webkit-keyframes countAnimation {
+  0% {
+    -webkit-transform: translate(0px, 0%);
+  }
+  85% {
+    -webkit-transform: translate(0px, -60%);
+  }
+  100% {
+    -webkit-transform: translate(0px, 00%);
+  }
+}
+
+@-o-keyframes countAnimation {
+  0% {
+    -o-transform: translate(0px, 0%);
+  }
+  85% {
+    -o-transform: translate(0px, -60%);
+  }
+  100% {
+    -o-transform: translate(0px, 0%);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 999px) {
+  html {
+    font-size: 18px;
+  }
+
+  /* Remove hover effects (For mobile sticky :hover problem)*/
+  .rps-value-button:hover {
+    opacity: 1;
+    filter: alpha(opacity=100); /* IE8 */
+  }
+  .rps-menu-button:hover {
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 15px;
+  }
+}
