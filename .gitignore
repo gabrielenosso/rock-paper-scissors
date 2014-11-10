@@ -1,1 +1,4 @@
 node_modules
+cordova
+dist/*
+!/dist/index.html

@@ -7,6 +7,36 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <div id="rps-main-container">
+            <div id="rps-player1-score" class="rps-score player1-color-bg"></div>
+            <div id="rps-player2-score" class="rps-score player2-color-bg"></div>
+
+            <div id="rps-main-menu" class="rps-menu">
+                <div class="rps-menu-button" data-option="playerVsCpu">Player vs CPU</div>
+                <div class="rps-menu-button" data-option="CpuVsCpu">CPU vs CPU</div>
+            </div>
+
+            <div id="rps-endmatch-menu" class="rps-menu">
+                <div class="rps-menu-button" data-option="playAgain">Play again</div>
+                <div class="rps-menu-button" data-option="mainMenu">Main menu</div>
+            </div>
+
+            <div id="rps-player1-hand-container" class="rps-hand-container">
+                <img id="rps-player1-hand" class="rps-hand">
+            </div>
+            <div id="rps-player2-hand-container" class="rps-hand-container">
+                <img id="rps-player2-hand" class="rps-hand">
+            </div>
+
+            <div id="rps-values-container">
+                <img id="rps-value-rock" class="rps-value-button" data-value="rock" src="img/rock-btn.png" title="rock" alt="rock">
+                <img id="rps-value-paper" class="rps-value-button" data-value="paper" src="img/paper-btn.png" title="paper" alt="paper">
+                <img id="rps-value-scissors" class="rps-value-button" data-value="scissors" src="img/scissors-btn.png" title="scissors" alt="scissors">
+            </div>
+
+            <div id="rps-result"></div>
+        </div>
+        
         <script src="js/rps.js"></script>
     </body>
 </html>
